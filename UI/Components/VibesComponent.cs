@@ -11,10 +11,13 @@ namespace LiveSplit.UI.Components
 {
     public class VibesComponent : IComponent
     {
-        protected InfoTextComponent InternalComponent { get; set; }
-        public VibesSettings Settings { get; set; }
-        protected LiveSplitState CurrentState { get; set; }
         public string ComponentName => "Vibes";
+
+        protected InfoTextComponent InternalComponent { get; set; }
+        protected LiveSplitState CurrentState { get; set; }
+        protected bool isVibeValid { get; set; }
+
+        public VibesSettings Settings { get; set; }
 
         public float HorizontalWidth => InternalComponent.HorizontalWidth;
         public float MinimumWidth => InternalComponent.MinimumWidth;
@@ -27,8 +30,6 @@ namespace LiveSplit.UI.Components
         public float PaddingRight => InternalComponent.PaddingRight;
 
         public IDictionary<string, Action> ContextMenuControls => null;
-
-        protected bool isVibeValid { get; set; }
 
         public VibesComponent(LiveSplitState state)
         {
@@ -55,6 +56,7 @@ namespace LiveSplit.UI.Components
             InternalComponent.NameLabel.ForeColor = state.LayoutSettings.TextColor;
             InternalComponent.ValueLabel.ForeColor = state.LayoutSettings.TextColor;
 
+            DrawBackground(g, state, HorizontalWidth, height);
             InternalComponent.DrawHorizontal(g, state, height, clipRegion);
         }
 
@@ -69,7 +71,27 @@ namespace LiveSplit.UI.Components
             InternalComponent.NameLabel.ForeColor = state.LayoutSettings.TextColor;
             InternalComponent.ValueLabel.ForeColor = state.LayoutSettings.TextColor;
 
+            DrawBackground(g, state, width, VerticalHeight);
             InternalComponent.DrawVertical(g, state, width, clipRegion);
+        }
+
+        private void DrawBackground(Graphics g, LiveSplitState state, float width, float height)
+        {
+            if (Settings.BackgroundColor.A > 0
+                || Settings.BackgroundGradient != GradientType.Plain
+                && Settings.BackgroundColor2.A > 0)
+            {
+                var gradientBrush = new LinearGradientBrush(
+                            new PointF(0, 0),
+                            Settings.BackgroundGradient == GradientType.Horizontal
+                            ? new PointF(width, 0)
+                            : new PointF(0, height),
+                            Settings.BackgroundColor,
+                            Settings.BackgroundGradient == GradientType.Plain
+                            ? Settings.BackgroundColor
+                            : Settings.BackgroundColor2);
+                g.FillRectangle(gradientBrush, 0, 0, width, height);
+            }
         }
 
         public Control GetSettingsControl(LayoutMode mode)
@@ -136,45 +158,41 @@ namespace LiveSplit.UI.Components
             if (state.CurrentPhase == TimerPhase.Running || state.CurrentPhase == TimerPhase.Paused)
             {
                 TimeSpan? delta = LiveSplitStateHelper.GetLastDelta(state, state.CurrentSplitIndex, comparison, state.CurrentTimingMethod);
-                SplitDelta = delta.Value.TotalSeconds;
+                var liveDelta = state.CurrentTime[state.CurrentTimingMethod] - state.CurrentSplit.Comparisons[comparison][state.CurrentTimingMethod];
 
-                if (SplitDelta > 1 && SplitDelta < 30)
+                if (liveDelta > delta || (delta == null && liveDelta > TimeSpan.Zero))
                 {
-                    // losing time
-                    DefaultVibe = Settings.TextBehindLow;
-
+                    delta = liveDelta;
                 }
 
-                else if (SplitDelta > 30)
+                SplitDelta = delta.Value.TotalSeconds;
+
+                if (SplitDelta > (int) Settings.NumBehindLow && SplitDelta < (int)Settings.NumBehindHigh)
                 {
-                    // losing a lot
+                    DefaultVibe = Settings.TextBehindLow;
+                }
+                else if (SplitDelta > (int)Settings.NumBehindHigh)
+                {
                     DefaultVibe = Settings.TextBehindLarge;
                 }
 
-                else if (SplitDelta < 1 && SplitDelta > -30)
+                if (SplitDelta < (int)Settings.NumAheadLow && SplitDelta > -(int)Settings.NumAheadHigh)
                 {
-                    // gaining a lil
                     DefaultVibe = Settings.TextAheadLow;
                 }
-
-                else if (SplitDelta < -30)
+                else if (SplitDelta < -(int)Settings.NumAheadHigh)
                 {
-                    // gaining a lot
                     DefaultVibe = Settings.TextAheadLarge;
                 }
             }
             else if (state.CurrentPhase == TimerPhase.Ended)
             {
-                // PB'd
                 if (state.Run.Last().PersonalBestSplitTime[state.CurrentTimingMethod] == null ||
                     state.Run.Last().SplitTime[state.CurrentTimingMethod] < state.Run.Last().PersonalBestSplitTime[state.CurrentTimingMethod])
                 {
-                    //DefaultVibe = "MOM GET THE CAMERA!";
                     DefaultVibe = Settings.TextPB;
                 }
                 else {
-                    // we tried
-                    //DefaultVibe = "MISSION FAILED!";
                     DefaultVibe = Settings.TextNotPB;
                 }
             }
