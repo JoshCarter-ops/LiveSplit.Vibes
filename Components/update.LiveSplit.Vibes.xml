@@ -1,11 +1,11 @@
 <updates>
-  <update version="1.1.1">
+  <update version="1.1.2">
     <files>
       <file path="Components/LiveSplit.Vibes.dll" status="changed"/>
     </files>
     <changelog>
       <change>
-        Added the ability to create your own Left Text, default is still Vibes but can now be changed to status for example.
+        Added the ability to create your own Left Text.
       </change>
     </changelog>
   </update>
