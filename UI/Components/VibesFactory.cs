@@ -15,9 +15,9 @@ namespace LiveSplit.UI.Components
 
         public string UpdateName => ComponentName;
 
-        public string UpdateURL => "";
+        public string UpdateURL => "https://raw.githubusercontent.com/cartersoft/LiveSplit.Vibes/master/";
 
-        public string XMLURL => UpdateURL + "";
+        public string XMLURL => UpdateURL + "Components/update.LiveSplit.Vibes.xml";
 
         public Version Version => Version.Parse("1.1.0");
     }

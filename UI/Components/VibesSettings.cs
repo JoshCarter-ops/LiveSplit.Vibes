@@ -14,6 +14,7 @@ namespace LiveSplit.UI.Components
         public LayoutMode Mode { get; set; }
 
         public string TextDefault { get; set; }
+        public string LeftText { get; set; }
         public string TextPB { get; set; }
         public string TextNotPB { get; set; }
         public string TextAheadLarge { get; set; }
@@ -41,6 +42,7 @@ namespace LiveSplit.UI.Components
             Comparison = "Personal Best";
 
             TextDefault = txtDefault.Text;
+            LeftText = leftText.Text;
             TextPB = txtPB.Text;
             TextNotPB = txtNotPB.Text;
             TextAheadLarge = txtAheadLarge.Text;
@@ -63,6 +65,7 @@ namespace LiveSplit.UI.Components
             btnColor2.DataBindings.Add("BackColor", this, "BackgroundColor2", false, DataSourceUpdateMode.OnPropertyChanged);
 
             txtDefault.DataBindings.Add("Text", this, "TextDefault");
+            leftText.DataBindings.Add("Text", this, "LeftText");
             txtPB.DataBindings.Add("Text", this, "TextPB");
             txtNotPB.DataBindings.Add("Text", this, "TextNotPB");
             txtAheadLarge.DataBindings.Add("Text", this, "TextAheadLarge");
@@ -92,6 +95,7 @@ namespace LiveSplit.UI.Components
             return SettingsHelper.CreateSetting(document, parent, "Version", "1.0") ^
             
             SettingsHelper.CreateSetting(document, parent, "TextDefault", TextDefault) ^
+            SettingsHelper.CreateSetting(document, parent, "LeftText", LeftText) ^
             SettingsHelper.CreateSetting(document, parent, "TextPB", TextPB) ^
             SettingsHelper.CreateSetting(document, parent, "TextNotPB", TextNotPB) ^
             SettingsHelper.CreateSetting(document, parent, "TextAheadLarge", TextAheadLarge) ^
@@ -129,6 +133,7 @@ namespace LiveSplit.UI.Components
             GradientString = SettingsHelper.ParseString(element["BackgroundGradient"]);
 
             TextDefault = SettingsHelper.ParseString(element["TextDefault"]);
+            LeftText = SettingsHelper.ParseString(element["LeftText"]);
             TextPB = SettingsHelper.ParseString(element["TextPB"]);
             TextNotPB = SettingsHelper.ParseString(element["TextNotPB"]);
             TextAheadLarge = SettingsHelper.ParseString(element["TextAheadLarge"]);

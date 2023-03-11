@@ -33,6 +33,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.numBehindLow = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.numAheadLow = new System.Windows.Forms.NumericUpDown();
@@ -41,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.numBehindHigh = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
@@ -60,21 +62,21 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnColor1 = new System.Windows.Forms.Button();
             this.btnColor2 = new System.Windows.Forms.Button();
-            this.isTwoRows = new System.Windows.Forms.CheckBox();
             this.lblDefault = new System.Windows.Forms.Label();
-            this.numBehindLow = new System.Windows.Forms.NumericUpDown();
-            this.numBehindHigh = new System.Windows.Forms.NumericUpDown();
+            this.isTwoRows = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.leftText = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numBehindLow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAheadLow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAheadHigh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBehindHigh)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numBehindLow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numBehindHigh)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBehindLow
@@ -90,7 +92,7 @@
             // 
             this.txtDefault.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.tableLayoutPanel1.SetColumnSpan(this.txtDefault, 3);
-            this.txtDefault.Location = new System.Drawing.Point(162, 62);
+            this.txtDefault.Location = new System.Drawing.Point(162, 82);
             this.txtDefault.Name = "txtDefault";
             this.txtDefault.Size = new System.Drawing.Size(277, 20);
             this.txtDefault.TabIndex = 2;
@@ -105,26 +107,30 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.cmbGradientType, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label11, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnColor1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnColor2, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblDefault, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtDefault, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.isTwoRows, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblDefault, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtDefault, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.leftText, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(7, 7);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(448, 540);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(448, 560);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // groupBox3
@@ -134,9 +140,9 @@
             this.tableLayoutPanel1.SetColumnSpan(this.groupBox3, 4);
             this.groupBox3.Controls.Add(this.tableLayoutPanel4);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(3, 390);
+            this.groupBox3.Location = new System.Drawing.Point(3, 412);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(442, 147);
+            this.groupBox3.Size = new System.Drawing.Size(442, 145);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thresholds (Seconds)";
@@ -166,6 +172,30 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.66667F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(433, 110);
             this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // numBehindLow
+            // 
+            this.numBehindLow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.numBehindLow.Location = new System.Drawing.Point(111, 76);
+            this.numBehindLow.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.numBehindLow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numBehindLow.Name = "numBehindLow";
+            this.numBehindLow.Size = new System.Drawing.Size(102, 20);
+            this.numBehindLow.TabIndex = 18;
+            this.numBehindLow.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numBehindLow.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label5
             // 
@@ -284,15 +314,40 @@
             this.label12.Text = "HIGH";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // numBehindHigh
+            // 
+            this.numBehindHigh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.numBehindHigh.AutoSize = true;
+            this.numBehindHigh.Location = new System.Drawing.Point(327, 76);
+            this.numBehindHigh.Maximum = new decimal(new int[] {
+            600,
+            0,
+            0,
+            0});
+            this.numBehindHigh.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numBehindHigh.Name = "numBehindHigh";
+            this.numBehindHigh.Size = new System.Drawing.Size(103, 20);
+            this.numBehindHigh.TabIndex = 19;
+            this.numBehindHigh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numBehindHigh.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // groupBox1
             // 
             this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.SetColumnSpan(this.groupBox1, 4);
             this.groupBox1.Controls.Add(this.tableLayoutPanel2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 90);
+            this.groupBox1.Location = new System.Drawing.Point(3, 110);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(442, 144);
+            this.groupBox1.Size = new System.Drawing.Size(442, 145);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Good Delta Settings";
@@ -385,9 +440,9 @@
             this.tableLayoutPanel1.SetColumnSpan(this.groupBox2, 4);
             this.groupBox2.Controls.Add(this.tableLayoutPanel3);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(3, 240);
+            this.groupBox2.Location = new System.Drawing.Point(3, 261);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(442, 144);
+            this.groupBox2.Size = new System.Drawing.Size(442, 145);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bad Delta Settings";
@@ -515,11 +570,22 @@
             this.btnColor2.UseVisualStyleBackColor = false;
             this.btnColor2.Click += new System.EventHandler(this.ColorButtonClick);
             // 
+            // lblDefault
+            // 
+            this.lblDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDefault.AutoSize = true;
+            this.lblDefault.Location = new System.Drawing.Point(3, 87);
+            this.lblDefault.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.lblDefault.Name = "lblDefault";
+            this.lblDefault.Size = new System.Drawing.Size(153, 13);
+            this.lblDefault.TabIndex = 32;
+            this.lblDefault.Text = "Default Text:";
+            // 
             // isTwoRows
             // 
             this.isTwoRows.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.isTwoRows.AutoSize = true;
-            this.isTwoRows.Location = new System.Drawing.Point(7, 35);
+            this.isTwoRows.Location = new System.Drawing.Point(7, 33);
             this.isTwoRows.Margin = new System.Windows.Forms.Padding(7, 3, 3, 3);
             this.isTwoRows.Name = "isTwoRows";
             this.isTwoRows.Size = new System.Drawing.Size(149, 17);
@@ -527,65 +593,25 @@
             this.isTwoRows.Text = "Display 2 Rows";
             this.isTwoRows.UseVisualStyleBackColor = true;
             // 
-            // lblDefault
+            // label10
             // 
-            this.lblDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDefault.AutoSize = true;
-            this.lblDefault.Location = new System.Drawing.Point(3, 67);
-            this.lblDefault.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.lblDefault.Name = "lblDefault";
-            this.lblDefault.Size = new System.Drawing.Size(153, 13);
-            this.lblDefault.TabIndex = 32;
-            this.lblDefault.Text = "Default Text:";
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 59);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(153, 13);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Left Text:";
             // 
-            // numBehindLow
+            // leftText
             // 
-            this.numBehindLow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.numBehindLow.Location = new System.Drawing.Point(111, 76);
-            this.numBehindLow.Maximum = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
-            this.numBehindLow.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numBehindLow.Name = "numBehindLow";
-            this.numBehindLow.Size = new System.Drawing.Size(102, 20);
-            this.numBehindLow.TabIndex = 18;
-            this.numBehindLow.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numBehindLow.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numBehindHigh
-            // 
-            this.numBehindHigh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.numBehindHigh.AutoSize = true;
-            this.numBehindHigh.Location = new System.Drawing.Point(327, 76);
-            this.numBehindHigh.Maximum = new decimal(new int[] {
-            600,
-            0,
-            0,
-            0});
-            this.numBehindHigh.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numBehindHigh.Name = "numBehindHigh";
-            this.numBehindHigh.Size = new System.Drawing.Size(103, 20);
-            this.numBehindHigh.TabIndex = 19;
-            this.numBehindHigh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numBehindHigh.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.leftText.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tableLayoutPanel1.SetColumnSpan(this.leftText, 3);
+            this.leftText.Location = new System.Drawing.Point(162, 57);
+            this.leftText.Name = "leftText";
+            this.leftText.Size = new System.Drawing.Size(277, 20);
+            this.leftText.TabIndex = 34;
+            this.leftText.Text = "Vibes";
             // 
             // VibesSettings
             // 
@@ -596,15 +622,17 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "VibesSettings";
             this.Padding = new System.Windows.Forms.Padding(3);
-            this.Size = new System.Drawing.Size(461, 553);
+            this.Size = new System.Drawing.Size(461, 573);
             this.Load += new System.EventHandler(this.VibesSettings_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numBehindLow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAheadLow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAheadHigh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBehindHigh)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -612,8 +640,6 @@
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numBehindLow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numBehindHigh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -656,5 +682,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown numBehindLow;
         private System.Windows.Forms.NumericUpDown numBehindHigh;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox leftText;
     }
 }
