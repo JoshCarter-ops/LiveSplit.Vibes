@@ -11,7 +11,7 @@ namespace LiveSplit.UI.Components
 {
     public class VibesComponent : IComponent
     {
-        public string ComponentName => "Vibes";
+        public string ComponentName => "Vibes | Run Status";
 
         protected InfoTextComponent InternalComponent { get; set; }
         protected LiveSplitState CurrentState { get; set; }
@@ -34,7 +34,8 @@ namespace LiveSplit.UI.Components
         public VibesComponent(LiveSplitState state)
         {
             Settings = new VibesSettings();
-            InternalComponent = new InfoTextComponent("Vibes", "Immaculate");
+            string infoText = Settings.LeftText.Equals("Vibes") ? Settings.LeftText : "Vibes";
+            InternalComponent = new InfoTextComponent(infoText, "Immaculate");
 
             state.OnStart += state_OnStart;
             state.OnSplit += state_OnSplitChange;
@@ -116,6 +117,7 @@ namespace LiveSplit.UI.Components
             {
                 isVibeValid = true;
                 InternalComponent.InformationValue = SetVibe(state);
+                InternalComponent.InformationName = Settings.LeftText;
             }
 
             InternalComponent.Update(invalidator, state, width, height, mode);
