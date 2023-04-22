@@ -1,4 +1,4 @@
-<h1> <img src="https://raw.githubusercontent.com/LiveSplit/LiveSplit/master/LiveSplit/Resources/Icon.png" alt="LiveSplit" height="42" width="45" align="top"/> LiveSplit</h1>
+<h1> <img src="https://raw.githubusercontent.com/LiveSplit/LiveSplit/master/LiveSplit/Resources/Icon.png" alt="LiveSplit" height="42" width="45" align="top"/> LiveSplit.Vibes</h1>
 
 [![GitHub release](https://img.shields.io/github/release/LiveSplit/LiveSplit.svg)](https://github.com/LiveSplit/LiveSplit/releases/latest)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/LiveSplit/LiveSplit/master/LICENSE)
@@ -10,7 +10,13 @@ LiveSplit is a timer program for speedrunners that is both easy to use and full 
   <img src="https://raw.githubusercontent.com/LiveSplit/LiveSplit.github.io/master/images/livesplittimer.png" alt="LiveSplit"/>
 </p>
 
+## Vibes Installation
+Go to the releases section and download the **.dll** file. 
+Copy/Move the .dll file into your **livesplit/components** folder.
+
 ## Features
+
+**Vibes Integration:** Is the component that will dynamically give your run a customisable status or vibe (if you're cool) based on your current run's delta. Open LiveSplit -> edit layout -> information -> Vibes -> Voila!
 
 **Speedrun.com Integration:** [Speedrun.com](http://speedrun.com) is fully integrated into LiveSplit. You can browse their leaderboards, download splits, and even submit your own runs directly from LiveSplit. You can also show the World Records for the games you run with the World Record Component.
 
